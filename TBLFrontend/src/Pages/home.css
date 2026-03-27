@@ -1,0 +1,389 @@
+/* General styles for the Home component */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Hero section styling */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 20px;
+  background-color: #2ed23e;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  overflow: hidden; /* Ensure animations don't overflow */
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 60%;
+}
+
+/* Typing animation for the heading */
+.hero-section h1 {
+  font-size: 2.5rem;
+  color: #e5efef;
+  margin-bottom: 20px;
+  overflow: hidden; /* Hide overflow for typing effect */
+  white-space: nowrap; /* Keep text in one line */
+  border-right: 3px solid #e5efef; /* Cursor effect */
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #e5efef;
+  }
+}
+
+/* Fade-in animation for the paragraph */
+.hero-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #5b5b25;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 3s; /* Delay to start after typing animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Button animation */
+.hero-content button {
+  background-color: #f0f7f6;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+  animation-delay: 4s; /* Delay to start after paragraph animation */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content button:hover {
+  background-color: #ecf4ae;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hero-content button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Image container styling */
+.hero-section img {
+  flex: 1;
+  max-width: 35%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInRight 1.5s ease-in-out forwards;
+  animation-delay: 2s; /* Delay to start after typing animation */
+}
+
+/* Gradient overlay for image */
+.hero-section img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(46, 210, 62, 0.3), rgba(46, 210, 62, 0.1));
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Hover effects for image */
+.hero-section img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section img:hover::before {
+  opacity: 1; /* Show gradient overlay on hover */
+}
+
+/* Border glow effect */
+.hero-section img::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #2ed23e, #8e44ad);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hero-section img:hover::after {
+  opacity: 1; /* Show border glow on hover */
+}
+
+/* Fade-in animation for image */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-section img {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-section img {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .benefits-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .benefit-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .benefit-item p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 40px 10px;
+  }
+
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .benefits-section {
+    padding: 20px 10px;
+  }
+
+  .benefits-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .benefit-item h3 {
+    font-size: 1.2rem;
+  }
+}
+/* Benefits section styling */
+/* Benefits section styling */
+.benefits-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #ffffff);
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+}
+
+.benefits-section h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  font-weight: 700;
+}
+
+.benefits-section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #8e44ad);
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+.benefit-item {
+  margin-bottom: 30px;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid transparent;
+  opacity: 0;
+  transform: translateY(50px); /* Start slightly below */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.benefit-item.visible {
+  opacity: 1;
+  transform: translateY(0); /* Move to original position */
+}
+
+.benefit-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-left: 5px solid #3498db;
+}
+
+.benefit-item h3 {
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-bottom: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.benefit-item h3::before {
+  content: '✈️';
+  margin-right: 12px;
+  font-size: 1.5rem;
+  color: #3498db;
+}
+
+.benefit-item p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .benefits-section {
+    padding: 60px 15px;
+  }
+
+  .benefits-section h2 {
+    font-size: 2rem;
+  }
+
+  .benefit-item h3 {
+    font-size: 1.6rem;
+  }
+
+  .benefit-item p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-section {
+    padding: 40px 10px;
+  }
+
+  .benefits-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .benefit-item {
+    padding: 20px;
+  }
+
+  .benefit-item h3 {
+    font-size: 1.4rem;
+  }
+}

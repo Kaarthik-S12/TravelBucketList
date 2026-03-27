@@ -1,0 +1,50 @@
+/* Memories Page Container */
+.memories-page {
+    padding: 20px;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  .header {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1e293b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* Memories Grid */
+  .memories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  /* No Memories Message */
+  .no-memories-message {
+    font-size: 1.4rem;
+    color: #64748b;
+    text-align: center;
+    margin-top: 40px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

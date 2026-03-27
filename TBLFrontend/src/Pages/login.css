@@ -1,0 +1,140 @@
+/* Login Page Styles */
+.login-container {
+    display: flex;
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: center;
+    padding: 2rem;
+    max-width: 1200px; /* Limit the width for better readability */
+    margin: 0 auto; /* Center the container */
+    min-height: 100vh; /* Full height of the viewport */
+    background-color: #ffffff; /* White background for the entire page */
+    font-family: 'Arial', sans-serif; /* Modern font */
+}
+
+/* Welcome Section (Left Side) */
+.welcome-section {
+    flex: 1; /* Takes up 50% of the space */
+    padding-right: 2rem; /* Space between welcome section and form */
+}
+
+.welcome-section h1 {
+    font-size: 3rem; /* Large heading */
+    color: #000000; /* Black color */
+    margin-bottom: 1rem;
+    font-weight: 700; /* Bold font weight */
+    line-height: 1.2;
+    letter-spacing: -0.05em; /* Slightly tighter letter spacing */
+}
+
+.welcome-section h6 {
+    font-size: 1.25rem; /* Slightly larger text */
+    color: #333333; /* Dark gray text */
+    line-height: 1.6;
+    font-weight: 400; /* Normal font weight */
+    max-width: 400px; /* Restrict width for better readability */
+    font-style: italic;
+}
+
+.welcome-section h6::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #3498db; /* Blue underline effect */
+    margin-top: 1rem;
+}
+
+/* Login Form Section (Right Side) */
+.form-section {
+    flex: 1; /* Takes up 50% of the space */
+    background-color: #ffffff; /* White background */
+    padding: 2.5rem;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid #e0e0e0; /* Light border */
+}
+
+.form-section label {
+    display: block;
+    font-size: 1rem;
+    color: #2c3e50; /* Dark blue-gray */
+    margin-bottom: 0.5rem;
+    font-weight: 600; /* Semi-bold font */
+}
+
+.form-section input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #bdc3c7; /* Light gray border */
+    border-radius: 6px; /* Rounded corners */
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-section input:focus {
+    border-color: #3498db; /* Blue border on focus */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* Glow effect */
+}
+
+.form-section button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #3498db; /* Blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 6px; /* Rounded corners */
+    font-size: 1rem;
+    font-weight: 600; /* Semi-bold */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-section button:hover {
+    background-color: #2980b9; /* Darker blue */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+.form-section button:active {
+    transform: translateY(0); /* Reset effect */
+}
+
+.form-section p {
+    font-size: 0.9rem;
+    color: #34495e; /* Slightly lighter text */
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.form-section a {
+    color: #3498db; /* Blue links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-section a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .welcome-section {
+        padding-right: 0;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .welcome-section h6::after {
+        margin: 1rem auto; /* Center underline */
+    }
+
+    .form-section {
+        width: 100%;
+    }
+}

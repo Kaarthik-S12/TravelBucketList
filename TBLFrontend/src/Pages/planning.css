@@ -1,0 +1,237 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Planning Page Container */
+  .planning-page {
+    padding: 40px 20px;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Page Title */
+  .planning-page h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Search Bar */
+/* Search Bar Container */
+.search-bar {
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+  }
+  
+  /* Search Input Field */
+  .search-bar input {
+    width: 100%;
+    padding: 12px 16px;
+    padding-left: 48px; /* Space for the search icon */
+    border: 2px solid #e2e8f0;
+    border-radius: 30px; /* Rounded edges for a modern look */
+    font-size: 1rem;
+    color: #4a5568;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .search-bar input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: none;
+  }
+  
+  /* Search Icon */
+  .search-bar .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1.2rem;
+    pointer-events: none; /* Ensures the icon doesn't interfere with input */
+  }
+  
+  /* Clear Button (Optional) */
+  .search-bar .clear-button {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .search-bar .clear-button:hover {
+    color: #2563eb;
+  }
+  
+ /* Planning Grid Container */
+.planning-grid {
+    display: grid;
+    gap: 24px;
+    padding: 20px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  /* No Matching Plans Message */
+  .no-plans-message {
+    font-size: 1.4rem;
+    color: #64748b;
+    text-align: center;
+    margin-top: 40px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Planning Card Enhancements */
+  .planning-card {
+    background: linear-gradient(to bottom, #ffffff, #f8fafc);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 100%;
+    max-width: 320px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .planning-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Planning Image */
+  .planning-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .planning-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Planning Content */
+  .planning-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    flex-grow: 1;
+  }
+  
+  .planning-content h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+  }
+  
+  .planning-content p {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+  
+  .planning-content .planning-place {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 8px;
+  }
+  
+  /* Visit Website Link */
+  .planning-link {
+    background-color: #2563eb;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 16px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .planning-link:hover {
+    background-color: #1e40af;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .planning-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .planning-grid {
+      gap: 16px;
+      padding: 10px;
+    }
+  
+    .planning-card {
+      max-width: 100%;
+    }
+  
+    .no-plans-message {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .planning-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .no-plans-message {
+      font-size: 1rem;
+    }
+  }

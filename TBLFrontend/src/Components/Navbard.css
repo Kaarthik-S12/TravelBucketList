@@ -1,0 +1,51 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Left links */
+  .left-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  /* Right links */
+  .right-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  /* Link styling */
+  .navbar a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #007bff;
+  }
+  
+  /* Profile icon styling */
+  .profile-link {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-icon {
+    font-size: 2rem; /* Increased size for the profile logo */
+    color: #333333;
+    transition: color 0.3s ease;
+  }
+  
+  .profile-icon:hover {
+    color: #007bff;
+  }

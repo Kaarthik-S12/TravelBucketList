@@ -11,16 +11,14 @@ public class UserService {
     @Autowired
     private UserRepo userrepo;
     public Users registerUser(Users user) {
-        // Hash the password before saving
         user.setPassword(hashPassword(user.getPassword()));
         return userrepo.save(user);
     }
 
-    // Verify user credentials during login
     public boolean verifyUser(String email, String password) {
         Users user = userrepo.findByEmail(email).orElse(null);
         if (user == null) {
-            return false; // User not found
+            return false; 
         }
         return checkPassword(password, user.getPassword());
     }
@@ -28,7 +26,6 @@ public class UserService {
         return BCrypt.hashpw(plainPassword, BCrypt.gensalt());
     }
 
-    // Check password using BCrypt
     private boolean checkPassword(String plainPassword, String hashedPassword) {
         return BCrypt.checkpw(plainPassword, hashedPassword);
     }
@@ -38,15 +35,13 @@ public class UserService {
     public boolean changePassword(String email, String newPassword) {
         Users user = userrepo.findByEmail(email).orElse(null);
         if (user == null) {
-            return false; // User not found
+            return false; 
         }
 
-        // Hash the new password before saving
         String hashedPassword = hashPassword(newPassword);
 
-        // Update the user's password with the new hashed password
         user.setPassword(hashedPassword);
-        userrepo.save(user); // Save the updated user
+        userrepo.save(user); 
 
         return true;
     }

@@ -20,7 +20,6 @@ function App() {
       checkStorage();
     }, 1000); 
 
-    // Cleanup the interval on component unmount
     return () => clearInterval(intervalId);
   }, []);
 
@@ -29,7 +28,7 @@ function App() {
     if (token) {
       try {
         const decodedToken = jwtDecode(token);
-        const currentTime = Date.now() / 1000; // Convert to seconds
+        const currentTime = Date.now() / 1000; 
         if (decodedToken.exp > currentTime) {
           setIsAuthenticated(true);
         }

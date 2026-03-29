@@ -13,7 +13,6 @@ function Saved() {
       return;
     }
 
-    // Function to fetch saved trips
     const fetchSavedTrips = () => {
       fetch(`http://localhost:8080/saved?email=${email}`)
         .then(response => response.json())
@@ -21,13 +20,9 @@ function Saved() {
         .catch(error => console.error("Error fetching saved trips:", error));
     };
 
-    // Initial fetch
     fetchSavedTrips();
-
-    // Set interval to fetch every second (1000 milliseconds)
     const intervalId = setInterval(fetchSavedTrips, 1000);
 
-    // Clear interval on cleanup
     return () => clearInterval(intervalId);
   }, [email]); 
 

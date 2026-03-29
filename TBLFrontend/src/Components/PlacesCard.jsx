@@ -70,7 +70,6 @@ function PlacesCard({ place }) {
         </button>
       </div>
 
-      {/* Confirmation Pop-up */}
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-content">

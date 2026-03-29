@@ -54,7 +54,6 @@ function PlacesCard({ place }) {
   };
 
 
-  // Handle cancellation
   const handleCancel = () => {
     setShowPopup(false);
   };

@@ -38,13 +38,13 @@ function Places() {
     <>
       <Navbard />
       <div className="places-page">
-        {/* Filter Bar */}
+       
         <div className="filter-bar">
   <div className="search-container">
-    {/* Search Icon */}
+    
     <span className="search-icon">&#128269;</span>
     
-    {/* Search Input */}
+   
     <input
       type="text"
       placeholder="Search places..."
@@ -53,7 +53,7 @@ function Places() {
       className="filter-input"
     />
     
-    {/* Clear Button (Visible only when there's input) */}
+    
     {filter && (
       <button className="clear-button" onClick={() => setFilter('')}>
         &times;

@@ -17,7 +17,7 @@ public class MovieController {
     private MovieService movie;
     @GetMapping("/movies")
     public ResponseEntity<List<Movies>> getMovies(){
-        List<Movies> movies = movie.getAllMovies(); // Fetch all movies from service
+        List<Movies> movies = movie.getAllMovies(); 
         return ResponseEntity.ok(movies);
     }
 }

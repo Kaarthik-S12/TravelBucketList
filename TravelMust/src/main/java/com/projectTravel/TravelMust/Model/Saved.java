@@ -15,8 +15,6 @@ public class Saved {
     public Saved() {
     }
 
-    // Parameterized constructor
-    // Parameterized constructor
     public Saved(String email, String image, String name, String location, String description, boolean completed) {
         this.email = email;
         this.image = image;
@@ -27,7 +25,6 @@ public class Saved {
     }
 
 
-    // Getters and Setters
     public long getId() {
         return id;
     }

@@ -4,7 +4,7 @@ import "./placescard.css";
 function PlacesCard({ place }) {
   const [showPopup, setShowPopup] = useState(false);
 
-  // Handle "Add to Travel" button click
+  
   const handleAddToTravel = () => {
     setShowPopup(true);
   };

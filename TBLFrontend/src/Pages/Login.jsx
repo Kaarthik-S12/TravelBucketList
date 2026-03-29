@@ -37,15 +37,14 @@ function Login() {
         
         localStorage.setItem("email", email);
         localStorage.setItem("token", data); 
-        setError(''); // Clear any previous errors
-        alert(data); // Show success message
-        navigate('/dashboard'); // Redirect to home page or dashboard
+        setError('');
+        alert(data);
+        navigate('/dashboard'); 
       } else {
-        // Login failed
-        setError(data); // Set error message from the backend
+        setError(data); 
       }
     } catch (err) {
-      // Handle network or other errors
+  
       setError('An error occurred. Please try again later.');
       console.error('Login error:', err);
     }
@@ -55,13 +54,13 @@ function Login() {
     <>
       <NavBar />
       <div className="login-container">
-        {/* Welcome Section */}
+    
         <div className="welcome-section">
           <h1>Welcome You Again!</h1>
           <h6>Don’t forget to LIVE!</h6>
         </div>
 
-        {/* Login Form */}
+        
         <div className="form-section">
           <form onSubmit={handleSubmit}>
             <label>Email :</label>
@@ -80,7 +79,7 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <br />
-            {error && <p className="error-message">{error}</p>} {/* Display error message */}
+            {error && <p className="error-message">{error}</p>} 
             <button type="submit">Log In</button>
             <p>
               Don't have an account? <a href="/signup">Sign Up</a>

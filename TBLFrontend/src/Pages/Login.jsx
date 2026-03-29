@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
-import './login.css'; // Import the CSS file
+import './login.css'; 
 import NavBar from '../Components/NavBar';
-import { useNavigate } from 'react-router-dom'; // For navigation after login
+import { useNavigate } from 'react-router-dom'; 
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
-  // Handle form submission
+  
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault(); 
 
-    // Validate inputs
+    
     if (!email || !password) {
       setError('Please fill in all fields.');
       return;
     }
 
     try {
-      // Send login request to the backend
+      
       const response = await fetch('http://localhost:8080/login', {
         method: 'POST',
         headers: {
@@ -29,12 +29,12 @@ function Login() {
         body: JSON.stringify({ email, password }),
       });
 
-      // Parse the response
+     
       const data = await response.text();
-      // localStorage.setItem("token ",data);
+      
 
       if (response.ok) {
-        // Login successful
+        
         localStorage.setItem("email", email);
         localStorage.setItem("token", data); 
         setError(''); // Clear any previous errors

@@ -47,8 +47,8 @@ public class SaveController {
 
         if (saved.isPresent()) {
             Saved savedEntry = saved.get();
-            savedEntry.setCompleted(true);  // Mark as done
-            saveService.save(savedEntry);   // Save the updated entity
+            savedEntry.setCompleted(true);  
+            saveService.save(savedEntry);   
 
             return ResponseEntity.ok("Marked as completed successfully.");
         } else {

@@ -1,12 +1,11 @@
 import {} from 'react';
 import { Link , useNavigate} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons'; // Import the profile icon
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'; 
 
 function Navbard() {
   const navigate = useNavigate();
 
-  // Handle Logout
   const handleLogout = () => {
     localStorage.removeItem("token"); // Remove the JWT token
     navigate("/"); // Redirect to login page or home

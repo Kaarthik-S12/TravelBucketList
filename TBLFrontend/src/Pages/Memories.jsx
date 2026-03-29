@@ -4,7 +4,6 @@ import MemoriesCard from '../Components/MemoriesCard';
 import "./Memories.css";
 
 function Memories() {
-  // Sample data for memories
   const [memories, setMemories] = useState([]);
   useEffect(() => {
     const email = localStorage.getItem('email');
@@ -14,7 +13,6 @@ function Memories() {
         const response = await fetch(`http://localhost:8080/memories/${email}`);
         const data = await response.json();
         
-        // Add image URL conversion for each memory
         const updatedMemories = await Promise.all(data.map(async (memory) => {
           const imageResponse = await fetch(`http://localhost:8080/memories/image/${memory.id}`);
           const imageBlob = await imageResponse.blob();

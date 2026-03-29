@@ -8,14 +8,14 @@ import javax.crypto.SecretKey;
 import java.util.Date;
 
 public class JwtUtil {
-    private static final SecretKey SECRET_KEYS = Keys.secretKeyFor(SignatureAlgorithm.HS256);// Change this to a strong secret key
+    private static final SecretKey SECRET_KEYS = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
 
     public static String generateToken(String email) {
         return Jwts.builder()
                 .setSubject(email)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10)) // 10 hours validity
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
                 .signWith(SECRET_KEYS)
                 .compact();
     }

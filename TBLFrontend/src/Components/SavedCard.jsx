@@ -8,12 +8,12 @@ function SavedCard({ trip }) {
   const [memoriesDate, setMemoriesDate] = useState('');
   const [memoriesFile, setMemoriesFile] = useState(null);
   const email = localStorage.getItem('email');
-  // Handle Delete button click
+  
   const handleDelete = () => {
     setShowDeletePopup(true);
   };
    
-  // Confirm Delete
+  
   const confirmDelete = async () => {
     setShowDeletePopup(false);
     console.log('Attempting to delete trip with ID:', trip.id);  // Add this line
@@ -24,7 +24,7 @@ function SavedCard({ trip }) {
   
       if (response.ok) {
         alert(`${trip.name} has been deleted.`);
-        // Optionally, remove the card from the UI here
+     
       } else {
         alert("Failed to delete the trip.");
       }
@@ -37,16 +37,15 @@ function SavedCard({ trip }) {
   const handleSaveMemories = async () => {
     setShowMemoriesPopup(false);
     
-    // Ensure all fields are filled
     if (!memoriesDate || !memoriesFile || !email || !trip.name) {
         alert("Please provide all details: date, image, email, and place.");
         return;
     }
 
-    const stringifiedDate = memoriesDate;  // Date should already be in string format "YYYY-MM-DD"
+    const stringifiedDate = memoriesDate;  
 
     const formData = new FormData();
-    formData.append("email", email);  // Email from localStorage
+    formData.append("email", email);  
     formData.append("name", trip.name);  // Trip name (place)
     formData.append("date", stringifiedDate);  // Date string
     formData.append("imageFile", memoriesFile);  // Image file

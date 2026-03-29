@@ -165,7 +165,7 @@ useEffect(() => {
   
       if (response.ok) {
         alert("Password updated successfully");
-        setIsPopupOpen(false); // Close the password change popup
+        setIsPopupOpen(false); 
       } else {
         const errorData = await response.json();
         alert("Error: " + errorData.message);
@@ -180,7 +180,6 @@ useEffect(() => {
     <>
       <Navbard />
       <div className="profile-container">
-        {/* Left Section: Profile Picture, Name, and Change Password Button */}
         <div className="left-section">
   <div className="profile-picture-wrapper">
     <img
@@ -207,7 +206,6 @@ useEffect(() => {
     Change Password
   </button>
 
-  {/* Speedometer Section */}
   <div className="activity-section">
     <h2>Activity</h2>
     <div className="speedometer-container">
@@ -218,15 +216,15 @@ useEffect(() => {
   startColor="purple"
   endColor="white"
   segments={10}
-  currentValueText={`${currentValue}%`} // Corrected here
-  width={200} // Set a fixed width for the speedometer
-  height={150} // Set a fixed height for the speedometer
+  currentValueText={`${currentValue}%`} 
+  width={200} 
+  height={150} 
 />
     </div>
   </div>
-</div>{/* <-- Closing left-section properly */}
+</div>
 
-        {/* Right Section: Account Details */}
+       
         <div className="rights-section">
           <h1>Account</h1>
           <div className="form-group">
@@ -266,15 +264,14 @@ useEffect(() => {
             <input type="email" 
               placeholder={profileData.email || "Enter Your Email"}
               value={profileData.email || ""}
-             // onChange={(e) => setProfileData({ ...profileData, email: e.target.value })}
+            
              readOnly
             />
           </div>
           <button className="save-changes-button" onClick={handleSaveChanges}>Make Changes</button>
         </div>
-      </div> {/* <-- Closing profile-container properly */}
+      </div> 
 
-      {/* Password Change Popup */}
       {isPopupOpen && (
         <div className="popup-overlay">
           <div className="popup">

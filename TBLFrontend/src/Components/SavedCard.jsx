@@ -16,7 +16,7 @@ function SavedCard({ trip }) {
   
   const confirmDelete = async () => {
     setShowDeletePopup(false);
-    console.log('Attempting to delete trip with ID:', trip.id);  // Add this line
+    console.log('Attempting to delete trip with ID:', trip.id);  
     try {
       const response = await fetch(`http://localhost:8080/saved/${trip.id}`, {
         method: 'DELETE',

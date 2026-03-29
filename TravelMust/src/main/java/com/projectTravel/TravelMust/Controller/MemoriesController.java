@@ -22,20 +22,20 @@ public class MemoriesController {
                             @RequestParam("name") String name,
                             @RequestParam("date") String date,
                             @RequestParam("imageFile") MultipartFile imageFile) throws IOException {
-        // Log incoming data
+      
         System.out.println("Received data: ");
         System.out.println("Email: " + email);
         System.out.println("Name: " + name);
         System.out.println("Date: " + date);
         System.out.println("Image: " + (imageFile != null ? imageFile.getOriginalFilename() : "No file"));
 
-        // Convert date
+        
         LocalDate dates = LocalDate.parse(date);
 
-        // Get image bytes
+        
         byte[] imageBytes = imageFile.getBytes();
 
-        // Create the memory object
+        
         Memories memory = new Memories(email, name, dates, imageBytes);
         memoryService.addMemory(memory);
 
@@ -49,9 +49,9 @@ public class MemoriesController {
     @GetMapping("/memories/image/{id}")
     public void getMemoryImage(@PathVariable Long id, HttpServletResponse response) throws IOException {
         Optional<Memories> memory = memoryService.getMemoryById(id);
-        byte[] imageBytes = memory.get().getImage();  // Assuming 'image' is a byte array in the Memories entity
+        byte[] imageBytes = memory.get().getImage();  
 
-        response.setContentType("image/jpeg"); // Or the correct MIME type
+        response.setContentType("image/jpeg"); 
         response.getOutputStream().write(imageBytes);
     }
 }

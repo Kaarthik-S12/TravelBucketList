@@ -12,8 +12,7 @@ public class MovieService {
     @Autowired
     private MovieRepo moviesRepo;
 
-    // Method to retrieve all movies
     public List<Movies> getAllMovies() {
-        return moviesRepo.findAll(); // This fetches all movies from the database
+        return moviesRepo.findAll(); 
     }
 }

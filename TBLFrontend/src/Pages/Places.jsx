@@ -28,7 +28,7 @@ function Places() {
       });
   }, []);
 
-  // Filter places based on search query
+ 
   const filteredPlaces = places.filter(place =>
     place.name.toLowerCase().includes(filter.toLowerCase()) ||
     place.location.toLowerCase().includes(filter.toLowerCase())

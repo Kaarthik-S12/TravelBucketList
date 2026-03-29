@@ -5,13 +5,13 @@ import "./places.css";
 
 function Places() {
   const [filter, setFilter] = useState('');
-  const [places, setPlaces] = useState([]); // State for storing places
+  const [places, setPlaces] = useState([]); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch places data from backend
+ 
   useEffect(() => {
-    fetch("http://localhost:8080/places") // Ensure this matches your backend endpoint
+    fetch("http://localhost:8080/places") 
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch places");

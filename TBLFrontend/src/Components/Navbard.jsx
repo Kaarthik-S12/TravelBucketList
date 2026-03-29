@@ -7,8 +7,8 @@ function Navbard() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Remove the JWT token
-    navigate("/"); // Redirect to login page or home
+    localStorage.removeItem("token"); 
+    navigate("/"); 
   };
   return (
     <nav className="navbar">

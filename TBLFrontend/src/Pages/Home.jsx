@@ -12,12 +12,12 @@ function Home() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Stop observing after animation
+            observer.unobserve(entry.target); 
           }
         });
       },
       {
-        threshold: 0.1, // Trigger when 10% of the element is visible
+        threshold: 0.1, 
       }
     );
 
@@ -25,7 +25,7 @@ function Home() {
       observer.observe(item);
     });
 
-    // Cleanup function to disconnect the observer when the component unmounts
+    
     return () => {
       observer.disconnect();
     };

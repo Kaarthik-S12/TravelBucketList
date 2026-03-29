@@ -50,10 +50,10 @@ function Planning() {
     onChange={(e) => setSearch(e.target.value)}
   />
   
-  {/* Clear Button (Optional) */}
+  
   {search && (
     <button className="clear-button" onClick={() => setSearch('')}>
-      &times; {/* Unicode for close icon */}
+      &times; 
     </button>
   )}
 </div>

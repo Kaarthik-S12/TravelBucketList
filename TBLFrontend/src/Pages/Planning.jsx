@@ -1,17 +1,17 @@
 import { useState,useEffect } from 'react';
 import NavBar from '../Components/NavBar';
-import PlanningCard from '../Components/PlanningCard'; // Import PlanningCard
+import PlanningCard from '../Components/PlanningCard'; 
 import "./planning.css";
 import Navbard from '../Components/Navbard';
 function Planning() {
   const [search, setSearch] = useState('');
-  const [plans, setPlans] = useState([]); // Store plans from backend
+  const [plans, setPlans] = useState([]); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   // Sample data for planning cards
   useEffect(() => {
-    fetch("http://localhost:8080/planning") // Adjust based on backend API
+    fetch("http://localhost:8080/planning") 
       .then(response => {
         if (!response.ok) {
           throw new Error("Failed to fetch plans");

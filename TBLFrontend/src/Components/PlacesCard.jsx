@@ -8,16 +8,16 @@ function PlacesCard({ place }) {
   const handleAddToTravel = () => {
     setShowPopup(true);
   };
-  const email = localStorage.getItem("email"); // Retrieve email from localStorage
+  const email = localStorage.getItem("email"); 
   if (!email) {
     alert("No email found. Please log in.");
     return;
   }
-  // Handle confirmation
+
   const handleConfirm = async () => {
     setShowPopup(false);
     
-    const email = localStorage.getItem("email"); // Retrieve email from localStorage
+    const email = localStorage.getItem("email"); 
     if (!email) {
       alert("No email found. Please log in.");
       return;

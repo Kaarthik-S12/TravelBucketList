@@ -34,7 +34,7 @@ function App() {
         }
          
         else {
-          localStorage.removeItem("token"); // Remove expired token
+          localStorage.removeItem("token"); 
           setIsAuthenticated(false);
         }
       } catch (error) {
@@ -59,7 +59,7 @@ function App() {
           element={!isAuthenticated ? <Login /> : <Navigate to="/dashboard" />}
         />
         <Route path="/dashboard" element={<DashBoard />} />
-        {/* Protected Routes */}
+        
         {isAuthenticated ? (
           <>
             <Route path="/profile" element={<Profile />} />

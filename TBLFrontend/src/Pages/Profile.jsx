@@ -152,7 +152,7 @@ useEffect(() => {
       return;
     }
   
-    const email = localStorage.getItem("email");  // Get the logged-in user's email
+    const email = localStorage.getItem("email");  
   
     try {
       const response = await fetch(`http://localhost:8080/profile/${email}/changePassword`, {

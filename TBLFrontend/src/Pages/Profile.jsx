@@ -22,7 +22,7 @@ function Profile() {
   const [completedDestinations, setCompletedDestinations] = useState([]);
   const [maxValue, setMaxValue] = useState(0);
   const [currentValue, setCurrentValue] = useState(0);
-  // Handle profile picture upload
+ 
 
   const handlePictureUpload = async (event) => {
     const file = event.target.files[0];
@@ -33,7 +33,7 @@ function Profile() {
       };
       reader.readAsDataURL(file);
   
-      // Send image to backend
+      
       const formData = new FormData();
       formData.append("file", file);
   
@@ -54,33 +54,33 @@ function Profile() {
       }
     }
   };
-   // Track changes in maxValue and currentValue after they are updated
+  
 useEffect(() => {
   console.log("Updated maxValue:", maxValue);
-}, [maxValue]); // Runs every time maxValue changes
+}, [maxValue]); 
 
 useEffect(() => {
   console.log("Updated currentValue:", currentValue);
-}, [currentValue]); // Runs every time currentValue changes
+}, [currentValue]); 
 
 useEffect(() => {
-  const email = localStorage.getItem("email"); // Get the email from localStorage or from the token
+  const email = localStorage.getItem("email"); 
   
-  // If email exists, fetch data
+ 
   if (email) {
-    // Function to fetch profile and completed destinations
+    
     const fetchData = () => {
       fetchProfileData(email);
       fetchCompletedDestinations(email);
     };
 
-    // Fetch data immediately when the component mounts
+  
     fetchData();
 
-    // Set an interval to fetch data every second
+    
     const intervalId = setInterval(fetchData, 1000);
 
-    // Cleanup the interval on component unmount
+    
     return () => clearInterval(intervalId);
   }
 }, []);

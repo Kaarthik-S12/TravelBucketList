@@ -5,19 +5,19 @@ import axios from 'axios';
 import "./dashboard.css";
 
 function DashBoard() {
-  // Define state to hold the movies
+ 
   const [movies, setMovies] = useState([]);
 
-  // Fetch movies from the backend
+  
   useEffect(() => {
-    axios.get('http://localhost:8080/movies')  // Adjust the URL as per your backend API
+    axios.get('http://localhost:8080/movies')  
       .then(response => {
-        setMovies(response.data); // Set the movies state with the fetched data
+        setMovies(response.data); 
       })
       .catch(error => {
         console.error("There was an error fetching the movies:", error);
       });
-  }, []); // Empty dependency array ensures this runs once when the component mounts
+  }, []); 
 
   return (
     <>

@@ -16,10 +16,9 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Call checkStorage every second
     const intervalId = setInterval(() => {
       checkStorage();
-    }, 1000); // 1000 ms = 1 second
+    }, 1000); 
 
     // Cleanup the interval on component unmount
     return () => clearInterval(intervalId);

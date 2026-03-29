@@ -46,9 +46,9 @@ function SavedCard({ trip }) {
 
     const formData = new FormData();
     formData.append("email", email);  
-    formData.append("name", trip.name);  // Trip name (place)
-    formData.append("date", stringifiedDate);  // Date string
-    formData.append("imageFile", memoriesFile);  // Image file
+    formData.append("name", trip.name);  
+    formData.append("date", stringifiedDate);  
+    formData.append("imageFile", memoriesFile);  
 
     try {
         const response = await fetch(`http://localhost:8080/memories`, {
@@ -68,19 +68,19 @@ function SavedCard({ trip }) {
     }
 };
 
-  // Cancel Delete
+  
   const cancelDelete = () => {
     setShowDeletePopup(false);
   };
 
-  // Handle Add Memories button click
+
   const handleAddMemories = () => {
     setShowMemoriesPopup(true);
   };
 
-  // Handle Mark as Done button click
+
   const handleMarkAsDone = async () => {
-    setIsDone(true);  // Change the button to 'Done' immediately
+    setIsDone(true);  
     try {
       const response = await fetch(`http://localhost:8080/saved/${trip.id}/complete`, {
         method: 'PUT',
@@ -113,7 +113,6 @@ function SavedCard({ trip }) {
         </div>
       </div>
 
-      {/* Delete Confirmation Pop-up */}
       {showDeletePopup && (
         <div className="popup-overlay">
           <div className="popup-content">
@@ -126,12 +125,12 @@ function SavedCard({ trip }) {
         </div>
       )}
 
-      {/* Add Memories Pop-up */}
+
       {showMemoriesPopup && (
         <div className="popup-overlay">
           <div className="popup-content">
             <p>Add memories for <strong>{trip.name}</strong>:</p>
-             {/* Input for date */}
+       
              <input
               type="date"
               value={memoriesDate}
@@ -139,7 +138,7 @@ function SavedCard({ trip }) {
               className="memories-date-input"
             />
             
-            {/* Input for file */}
+        
             <input
               type="file"
               onChange={(e) => setMemoriesFile(e.target.files[0])}

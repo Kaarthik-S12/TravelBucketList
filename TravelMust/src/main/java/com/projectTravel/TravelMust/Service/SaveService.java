@@ -28,7 +28,6 @@ public class SaveService {
         return saveRepository.findById(id);
     }
 
-    // Delete a Saved entry by ID
     public void delete(long id) {
         saveRepository.deleteById(id);
     }
@@ -36,8 +35,8 @@ public class SaveService {
         Optional<Saved> saved = getById(id);
         if (saved.isPresent()) {
             Saved savedEntry = saved.get();
-            savedEntry.setCompleted(true);  // Mark as done
-            saveRepository.save(savedEntry);  // Save the updated entity
+            savedEntry.setCompleted(true);  
+            saveRepository.save(savedEntry);  
         }
     }
 }

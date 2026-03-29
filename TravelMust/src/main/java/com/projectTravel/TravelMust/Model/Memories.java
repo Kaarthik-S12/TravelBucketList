@@ -13,14 +13,12 @@ public class Memories {
     private String email;
     private String name;
     private LocalDate date;
-    @Lob // Store large binary objects
+    @Lob 
     @Column(columnDefinition = "LONGBLOB")
     private byte[] image;
-    // Default constructor
     public Memories() {
     }
 
-    // Parameterized constructor
     public Memories(String email, String name, LocalDate date, byte[] image) {
         this.email = email;
         this.name = name;
@@ -28,7 +26,6 @@ public class Memories {
         this.image = image;
     }
 
-    // Getters and Setters
     public long getId() {
         return id;
     }

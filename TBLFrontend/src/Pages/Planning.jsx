@@ -9,7 +9,6 @@ function Planning() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Sample data for planning cards
   useEffect(() => {
     fetch("http://localhost:8080/planning") 
       .then(response => {
@@ -29,7 +28,6 @@ function Planning() {
       });
   }, []);
 
-  // Filter plans based on search query
   const filteredPlans = plans.filter(plan => 
     plan.title.toLowerCase().includes(search.toLowerCase()) || 
     plan.place.toLowerCase().includes(search.toLowerCase())
@@ -41,10 +39,10 @@ function Planning() {
     <div className="planning-page">
  
     <div className="search-bar">
-  {/* Search Icon */}
-  <span className="search-icon">&#128269;</span> {/* Unicode for search icon */}
   
-  {/* Search Input */}
+  <span className="search-icon">&#128269;</span>
+  
+
   <input
     type="text"
     placeholder="Search for plans..."

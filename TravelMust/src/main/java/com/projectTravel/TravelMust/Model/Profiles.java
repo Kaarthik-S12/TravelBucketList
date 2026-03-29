@@ -21,9 +21,8 @@ public class Profiles {
 
     @Column(nullable = false)
     private String gender;
-    @Lob  // Use @Lob for large data storage
+    @Lob  
     private byte[] profilePicture;
-    // Default constructor (required by JPA)
     public Profiles() {
     }
     public byte[] getProfilePicture() {
@@ -33,7 +32,6 @@ public class Profiles {
     public void setProfilePicture(byte[] profilePicture) {
         this.profilePicture = profilePicture;
     }
-    // Parameterized constructor (optional)
     public Profiles(String email, String firstName, String lastName, long phoneNumber, String gender,byte[] profilePicture) {
         this.email = email;
         this.firstName = firstName;
@@ -43,7 +41,6 @@ public class Profiles {
         this.profilePicture=profilePicture;
     }
 
-    // Getters and Setters
     public String getEmail() {
         return email;
     }

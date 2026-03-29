@@ -28,9 +28,9 @@ public class ProfileController {
     public ResponseEntity<Profiles> getProfile(@PathVariable String email) {
         Profiles profile = pro.getProfileByEmail(email);
         if (profile != null) {
-            return ResponseEntity.ok(profile); // Return profile details as response
+            return ResponseEntity.ok(profile); 
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null); // Return 404 if profile is not found
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null); 
     }
     @PostMapping("/profile")
     public ResponseEntity<String> addProfile(@RequestBody Profiles profile) {
@@ -53,7 +53,6 @@ public class ProfileController {
     public ResponseEntity<String> changePassword(@PathVariable String email, @RequestBody Map<String, String> request) {
         String newPassword = request.get("password");
 
-        // Change the password using the service
         boolean passwordChanged = pro1.changePassword(email, newPassword);
         if (passwordChanged) {
             return ResponseEntity.ok("Password updated successfully");

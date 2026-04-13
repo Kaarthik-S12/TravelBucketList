@@ -1,4 +1,4 @@
-/* Saved Card Container */
+
 .saved-card {
     background: #ffffff;
     border-radius: 16px;
@@ -21,7 +21,6 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   }
   
-  /* Saved Image */
   .saved-image {
     width: 100%;
     height: 200px;
@@ -35,7 +34,6 @@
     transform: scale(1.05);
   }
   
-  /* Saved Content */
   .saved-content {
     padding: 16px;
     display: flex;
@@ -48,24 +46,23 @@
   .saved-name {
     font-size: 1.6rem;
     font-weight: 600;
-    color: #1f2937; /* Dark, readable text */
+    color: #1f2937; 
     margin-bottom: 8px;
   }
   
   .saved-location {
     font-size: 1rem;
-    color: #64748b; /* Soft, muted text color */
+    color: #64748b;
     margin-bottom: 8px;
   }
   
   .saved-description {
     font-size: 1rem;
-    color: #4b5563; /* Soft, muted text color */
+    color: #4b5563; 
     line-height: 1.6;
     flex-grow: 1;
   }
   
-  /* Saved Buttons */
   .saved-buttons {
     display: flex;
     gap: 12px;
@@ -87,7 +84,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  /* Delete Button */
   .delete-button {
     background: linear-gradient(135deg, #ff6b6b, #ff4757);
   }
@@ -98,7 +94,6 @@
     box-shadow: 0 6px 12px rgba(255, 71, 87, 0.2);
   }
   
-  /* Add Memories Button */
   .add-memories-button {
     background: linear-gradient(135deg, #4b6cb7, #182848);
   }
@@ -109,7 +104,6 @@
     box-shadow: 0 6px 12px rgba(75, 108, 183, 0.2);
   }
   
-  /* Mark as Done Button */
   .mark-done-button {
     background: linear-gradient(135deg, #20bf55, #01baef);
   }
@@ -120,7 +114,6 @@
     box-shadow: 0 6px 12px rgba(32, 191, 85, 0.2);
   }
   
-  /* Disabled State for Mark as Done */
   .mark-done-button:disabled {
     background: linear-gradient(135deg, #c0c0c0, #a9a9a9);
     cursor: not-allowed;
@@ -132,7 +125,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  /* Pop-up Overlay */
   .popup-overlay {
     position: fixed;
     top: 0;
@@ -156,7 +148,6 @@
     }
   }
   
-  /* Pop-up Content */
   .popup-content {
     background-color: white;
     padding: 20px;
@@ -192,7 +183,7 @@
   .confirm-button, .cancel-button {
     padding: 12px 24px;
     border: 2px solid transparent;
-    border-radius: 0; /* Sharp edges */
+    border-radius: 0; 
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -200,30 +191,30 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     background-color: transparent;
-    color: #1f2937; /* Dark text color */
+    color: #1f2937; 
   }
   
   .confirm-button {
-    border-color: #2563eb; /* Blue border */
-    color: #2563eb; /* Blue text */
+    border-color: #2563eb;
+    color: #2563eb; 
   }
   
   .confirm-button:hover {
-    background-color: #2563eb; /* Blue background on hover */
-    color: white; /* White text on hover */
+    background-color: #2563eb;
+    color: white; 
   }
   
   .cancel-button {
-    border-color: #e2e8f0; /* Light gray border */
-    color: #1f2937; /* Dark text */
+    border-color: #e2e8f0; 
+    color: #1f2937; 
   }
   
   .cancel-button:hover {
-    background-color: #e2e8f0; /* Light gray background on hover */
-    color: #1f2937; /* Dark text on hover */
+    background-color: #e2e8f0; 
+    color: #1f2937; 
   }
   
-  /* Memories Textarea */
+
   .memories-textarea {
     width: 100%;
     height: 100px;

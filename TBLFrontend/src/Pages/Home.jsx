@@ -115,7 +115,7 @@ function Home() {
     <p>
       Travel moments become cherished memories, giving you stories and experiences to share 
       for a lifetime. It also increases gratitude for both home and the world, making life 
-      more meaningful and fulfilling. 🌍✨
+      more meaningful and fulfilling. 
     </p>
   </div>
 </div>
